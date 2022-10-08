@@ -594,9 +594,6 @@ data['Geography'].unique()
 dummy = pd.get_dummies(data['Geography'], drop_first=True)
 ```
 
-<b>Василий:</b> 
-Исправлю!
-</div>
 
 
 ```python
