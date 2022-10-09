@@ -1152,28 +1152,6 @@ print('Лучшая оценка(F1)', rfc_model_grid.best_score_)
     Лучшая оценка(F1) 0.5731258179916614
     
 
-### Логистическая регрессия
-
-
-```python
-regr_model = LogisticRegression(random_state=123, solver='lbfgs', max_iter=1000) 
-regr_model.fit(features_train, target_train) 
-predictions_regr = regr_model.predict(features_valid)
-result_regr = f1_score(target_valid, predictions_regr)
-```
-
-
-```python
-display('Наилучший показатель F1-меры для модели Логистической регресии:', result_regr)
-```
-
-
-    'Наилучший показатель F1-меры для модели Логистической регресии:'
-
-
-
-    0.10389610389610389
-
 
 ### Выводы по обучению модели без учета дисбаланса классов
 
