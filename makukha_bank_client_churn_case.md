@@ -1027,10 +1027,10 @@ data_valid.shape
 
 ```python
 #выделим целевой признак в отдельную переменную(для обучающей выборки)
-features_train = data_train.drop(columns=['Exited', 'Gender', 'Geography', 'CustomerId', 'RowNumber', 'Surname'], axis=1)
+features_train = data_train.drop(columns=['Exited', 'Gender', 'CustomerId', 'RowNumber', 'Surname'], axis=1)
 target_train = data_train['Exited']
 #выделим целевой признак в отдельную переменную(для валидационной выборки)
-features_valid = data_valid.drop(columns=['Exited', 'Gender', 'Geography', 'CustomerId', 'RowNumber', 'Surname'], axis=1)
+features_valid = data_valid.drop(columns=['Exited', 'Gender', 'CustomerId', 'RowNumber', 'Surname'], axis=1)
 target_valid = data_valid['Exited']
 ```
 
@@ -1047,7 +1047,7 @@ target_valid = np.nan_to_num(target_valid)
 
 ```python
 #отдельно отложим тестовую выборку для финальной проверки перед sanity check
-features_test = data_test.drop(columns=['Exited', 'Gender', 'Geography', 'CustomerId', 'RowNumber', 'Surname'], axis=1)
+features_test = data_test.drop(columns=['Exited', 'Gender', 'CustomerId', 'RowNumber', 'Surname'], axis=1)
 target_test = data_test['Exited']
 ```
 
