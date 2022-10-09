@@ -1066,7 +1066,7 @@ target_test = np.nan_to_num(target_test)
 best_model_dt = None
 best_result_dt = 0
 
-for x in range(10, 80):
+for x in range(10, 20):
     for y in range(2, 10):
         dt_model = DecisionTreeClassifier(random_state=123, max_depth=x, min_samples_leaf=y) 
         dt_model.fit(features_train, target_train) 
@@ -1172,7 +1172,7 @@ print('Лучшая оценка(F1)', rfc_model_grid.best_score_)
 best_model_dt_balanced = None
 best_result_dt_balanced = 0
 
-for x in range(10, 80):
+for x in range(10, 20):
     for y in range(2, 10):
         dt_model_balanced = DecisionTreeClassifier(random_state=123, class_weight='balanced', max_depth=x, min_samples_leaf=y) 
         dt_model_balanced.fit(features_train, target_train) 
@@ -1324,7 +1324,7 @@ features_upsampled, target_upsampled = upsample(features_train, target_train, 3)
 best_model_dt_up = None
 best_result_dt_up = 0
 
-for x in range(10, 80):
+for x in range(10, 20):
     for y in range(2, 10):
         dt_model_up = DecisionTreeClassifier(random_state=123, max_depth=x, min_samples_leaf=y) 
         dt_model_up.fit(features_upsampled, target_upsampled) 
@@ -1757,22 +1757,3 @@ auc_roc_regr
 
 
 * Самый **значимый вывод из нашего проекта будет о том, что самая сильная модель(случайный лес) не сильно колебалась по метрике F1 в пределе 0,62-0,64, что не так впечатляет. Также следует отметить, что лучше всего модель решающего дерева показала себя ДО внесения балансировки классов, немного превзойдя порог F1-меры.** 
-
-## Чек-лист готовности проекта
-
-Поставьте 'x' в выполненных пунктах. Далее нажмите Shift+Enter.
-
-- [x]  Jupyter Notebook открыт
-- [X]  Весь код выполняется без ошибок
-- [X]  Ячейки с кодом расположены в порядке исполнения
-- [X]  Выполнен шаг 1: данные подготовлены
-- [X]  Выполнен шаг 2: задача исследована
-    - [X]  Исследован баланс классов
-    - [X]  Изучены модели без учёта дисбаланса
-    - [X]  Написаны выводы по результатам исследования
-- [X]  Выполнен шаг 3: учтён дисбаланс
-    - [X]  Применено несколько способов борьбы с дисбалансом
-    - [X]  Написаны выводы по результатам исследования
-- [X]  Выполнен шаг 4: проведено тестирование
-- [X]  Удалось достичь *F1*-меры не менее 0.59
-- [X]  Исследована метрика *AUC-ROC*
